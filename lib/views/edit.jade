@@ -1,8 +1,30 @@
 extends layout
 
 block content
-  h2
-    a.name <%- pantry['site_name'] %>
-  div.address
-    div.address1 <%- pantry.get('address') %>
-    div.address2 <%- pantry.get('city') %>, MA <%- pantry.get('zipcode') %>
+  h2 Edit Pantry
+  form(method='post', action='/edit/?id=' + pantry._id)
+    input(name='pantry[_id]', value=pantry._id, type='hidden')
+    input(name='_method', value='PUT', type='hidden')
+
+    div
+      label Site Name: 
+        input(name='pantry[site_name]', value=pantry.site_name || '')
+    div
+      label Address: 
+        input(name='pantry[address]', value=pantry.address || '')
+    div
+      label City: 
+        input(name='pantry[city]', value=pantry.city || '')
+      label Zipcode: 
+        input(name='pantry[zipcode]', value=pantry.zipcode || '')
+
+    div
+      label Website: 
+        input(name='pantry[website]', value=pantry.website || '')
+    div
+      label Email: 
+        input(name='pantry[email]', value=pantry.email || '')
+
+
+
+
