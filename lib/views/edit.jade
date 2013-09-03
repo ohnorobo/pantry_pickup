@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h2
+    a.name <%- pantry['site_name'] %>
+  div.address
+    div.address1 <%- pantry.get('address') %>
+    div.address2 <%- pantry.get('city') %>, MA <%- pantry.get('zipcode') %>
