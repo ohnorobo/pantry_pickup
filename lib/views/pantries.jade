@@ -2,7 +2,7 @@ extends layout
 
 block content
   h2 Edit Pantry
-  form(method='post', action='/edit/?id=' + pantry._id)
+  form(method='post', action='/pantries/?id=' + pantry._id)
     input(name='pantry[_id]', value=pantry._id, type='hidden')
     input(name='_method', value='PUT', type='hidden')
 
