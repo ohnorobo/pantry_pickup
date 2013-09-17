@@ -89,7 +89,7 @@ block content
     p
       div
         h4 Inaccurate information? 
-          a(href="pantries?id=<% pantry.id %>") edit
+          a(href!="pantries/<%= pantry.id  %>") edit
 
   div#social
     <!-- AddThis Button BEGIN -->
