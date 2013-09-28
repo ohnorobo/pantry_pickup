@@ -2,28 +2,40 @@ extends layout
 
 block content
   h2 Edit Pantry
-  form(method='post', action='/pantries/?id=' + pantry._id)
+  form(method='post', action='/pantries/' + pantry._id)
     input(name='pantry[_id]', value=pantry._id, type='hidden')
     input(name='_method', value='PUT', type='hidden')
 
+    p
     div
       label Site Name: 
         input(name='pantry[site_name]', value=pantry.site_name || '')
+
+    p
     div
       label Address: 
         input(name='pantry[address]', value=pantry.address || '')
     div
       label City: 
         input(name='pantry[city]', value=pantry.city || '')
+    div
       label Zipcode: 
         input(name='pantry[zipcode]', value=pantry.zipcode || '')
 
+    p
     div
       label Website: 
         input(name='pantry[website]', value=pantry.website || '')
     div
       label Email: 
         input(name='pantry[email]', value=pantry.email || '')
+    div
+      label Phone: 
+        input(name='pantry[phone]', value=pantry.phone || '')
+
+    p
+    div
+      input(type="submit", value="Submit")
 
 
 
